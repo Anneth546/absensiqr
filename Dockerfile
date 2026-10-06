@@ -17,9 +17,13 @@ FROM php:8.3-apache
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     libonig-dev \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
     unzip \
     git \
     pkg-config \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
     pdo_mysql \
     mbstring \
