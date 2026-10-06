@@ -3,7 +3,6 @@ FROM node:22-alpine AS assets
 WORKDIR /app
 
 COPY package*.json ./
-
 RUN npm ci
 
 COPY resources ./resources
@@ -32,6 +31,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 COPY . .
+
+# Aiven MySQL SSL certificate
+COPY ca.pem /etc/ssl/certs/aiven-ca.pem
 
 RUN composer install \
     --no-dev \
