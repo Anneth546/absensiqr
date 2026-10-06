@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     pdo_mysql \
     mbstring \
     bcmath \
+    gd \
     zip \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
