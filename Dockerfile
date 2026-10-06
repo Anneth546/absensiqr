@@ -16,8 +16,10 @@ FROM php:8.3-apache
 
 RUN apt-get update && apt-get install -y \
     libzip-dev \
+    libonig-dev \
     unzip \
     git \
+    pkg-config \
     && docker-php-ext-install \
     pdo_mysql \
     mbstring \
