@@ -30,7 +30,7 @@ use App\Http\Controllers\AdminPengaturanController;
 use App\Http\Controllers\AdminProfilController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 // =========================
